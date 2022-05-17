@@ -1,12 +1,17 @@
 <template>
     <div class="container">
-        <h1>Hello World</h1>
+        <HeaderComp title="Task Tracker" />
     </div>
 </template>
 
 <script>
+import HeaderComp from './components/HeaderComp.vue';
+
 export default {
     name: 'App',
+    components: {
+        HeaderComp,
+    },
 };
 </script>
 
