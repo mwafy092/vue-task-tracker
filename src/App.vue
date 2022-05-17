@@ -22,6 +22,10 @@ export default {
     margin: 0;
     padding: 0;
 }
+
+body {
+    background-color: #eee;
+}
 .container {
     width: 70vw;
     height: 100vh;
@@ -30,5 +34,7 @@ export default {
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
 }
 </style>
