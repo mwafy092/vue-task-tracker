@@ -1,7 +1,13 @@
 <template>
     <div class="container">
-        <HeaderComp title="Task Tracker" />
-        <AddTaskComp @add-task="addTask" />
+        <HeaderComp
+            title="Task Tracker"
+            @toggle-add-task="toggleAddTask"
+            :showAddTask="showAddTask"
+        />
+        <div v-show="showAddTask" class="add-task-container">
+            <AddTaskComp @add-task="addTask" />
+        </div>
         <TasksComp
             :tasks="tasks"
             @delete-task="deleteTask"
@@ -20,6 +26,7 @@ export default {
     data() {
         return {
             tasks: [],
+            showAddTask: false,
         };
     },
     methods: {
@@ -36,6 +43,9 @@ export default {
             this.tasks = this.tasks.map((task) =>
                 task.id === id ? { ...task, reminder: !task.reminder } : task
             );
+        },
+        toggleAddTask() {
+            this.showAddTask = !this.showAddTask;
         },
     },
     created() {
@@ -90,5 +100,9 @@ body {
     text-align: center;
     padding: 20px;
     background-color: #ffffff;
+}
+.add-task-container {
+    margin: auto;
+    width: 100%;
 }
 </style>

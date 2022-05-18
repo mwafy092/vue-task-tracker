@@ -1,7 +1,11 @@
 <template>
     <header>
         <h1>{{ title }}</h1>
-        <ButtonComp text="Add Task" color="green" />
+        <ButtonComp
+            :text="showAddTask ? 'Close' : 'Add Task'"
+            :color="showAddTask ? 'red' : 'green'"
+            @toggle-add-task="$emit('toggle-add-task')"
+        />
     </header>
 </template>
 
@@ -12,6 +16,7 @@ export default {
     name: 'HeaderComp',
     props: {
         title: String,
+        showAddTask: Boolean,
     },
     components: {
         ButtonComp,

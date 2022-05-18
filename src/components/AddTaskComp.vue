@@ -73,7 +73,7 @@ form {
     margin: 10px 0;
 }
 label {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: bold;
     color: #333;
     margin-right: 10px;
@@ -81,8 +81,8 @@ label {
 
 input[name='text'],
 input[name='day'] {
-    width: 200px;
-    height: 20px;
+    width: 300px;
+    height: 30px;
     border: 2px solid #333;
     border-radius: 5px;
     font-size: 12px;
