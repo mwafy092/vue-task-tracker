@@ -10,13 +10,25 @@
       "id": "2",
       "text": "Bue new Iphone",
       "day": "May 4th at 2:20pm",
-      "reminder": false
+      "reminder": true
     },
     {
       "text": "asdasd",
-      "day": "2022-05-18",
+      "day": "2022-05-17",
       "reminder": false,
-      "id": "cuvB3OV"
+      "id": "Ch4Hf3d"
+    },
+    {
+      "text": "asdasd",
+      "day": "2022-05-11",
+      "reminder": true,
+      "id": "PkshBon"
+    },
+    {
+      "text": "helloi",
+      "day": "2022-05-10",
+      "reminder": true,
+      "id": "jxGrhUL"
     }
   ]
 }

@@ -13,11 +13,14 @@
             @delete-task="deleteTask"
             @toggle-reminder="toggleReminder"
         />
+        <router-view></router-view>
+        <FooterComp />
     </div>
 </template>
 
 <script>
 import HeaderComp from './components/HeaderComp.vue';
+import FooterComp from './components/FooterComp.vue';
 import TasksComp from './components/TasksComp.vue';
 import AddTaskComp from './components/AddTaskComp.vue';
 
@@ -91,6 +94,7 @@ export default {
         HeaderComp,
         TasksComp,
         AddTaskComp,
+        FooterComp,
     },
 };
 </script>
