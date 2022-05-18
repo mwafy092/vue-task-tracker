@@ -4,7 +4,17 @@
             {{ task.text }}
             <i class="fa-solid fa-delete-left" @click="onDelete(task.id)"></i>
         </h3>
-        <p>{{ task.day }} <i class="fa-solid fa-bell"></i></p>
+        <p>
+            {{ task.day }}
+            <i
+                :class="[
+                    task.reminder
+                        ? 'fa-solid fa-bell-slash'
+                        : 'fa-solid fa-bell',
+                ]"
+                @click="onToggle(task.id)"
+            ></i>
+        </p>
     </div>
 </template>
 
@@ -17,6 +27,9 @@ export default {
     methods: {
         onDelete(id) {
             this.$emit('delete-task', id);
+        },
+        onToggle(id) {
+            this.$emit('toggle-reminder', id);
         },
     },
 };
