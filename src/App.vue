@@ -1,6 +1,7 @@
 <template>
     <div class="container">
         <HeaderComp title="Task Tracker" />
+        <AddTaskComp @add-task="addTask" />
         <TasksComp
             :tasks="tasks"
             @delete-task="deleteTask"
@@ -12,6 +13,7 @@
 <script>
 import HeaderComp from './components/HeaderComp.vue';
 import TasksComp from './components/TasksComp.vue';
+import AddTaskComp from './components/AddTaskComp.vue';
 
 export default {
     name: 'App',
@@ -21,6 +23,10 @@ export default {
         };
     },
     methods: {
+        addTask(task) {
+            console.log(task);
+            this.tasks = [...this.tasks, task];
+        },
         deleteTask(id) {
             if (confirm('Are you sure?')) {
                 this.tasks = this.tasks.filter((task) => task.id !== id);
@@ -28,9 +34,7 @@ export default {
         },
         toggleReminder(id) {
             this.tasks = this.tasks.map((task) =>
-                task.id === id
-                    ? { ...task, reminder: !task.reminder }
-                    : { ...task }
+                task.id === id ? { ...task, reminder: !task.reminder } : task
             );
         },
     },
@@ -59,6 +63,7 @@ export default {
     components: {
         HeaderComp,
         TasksComp,
+        AddTaskComp,
     },
 };
 </script>
